@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-)d*gcvi8471q63^rb!rn$16h45u5#=t!k#cf7+te*e@-$7fr&o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.37']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'admin',
         'USER': 'admin',
         'PASSWORD': 'admin',
-        'HOST': '172.20.0.3',
+        'HOST': 'postgresql',
         'PORT': 5432,
     },
     'macapa': {
@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'admin',
         'USER': 'admin',
         'PASSWORD': 'admin',
-        'HOST': '172.20.0.2',
+        'HOST': 'mysql',
         'PORT': 3306,
     }
 }
