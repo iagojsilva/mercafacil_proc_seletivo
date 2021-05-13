@@ -12,6 +12,7 @@ Como rodar a aplicação
 obs: Faz se necessario ter docker e docker-compose instalado
 1. Clone esse repositório
 2. execute o seguintes comandos
+
 $docker-compose up --build
 espero as aplicações subirem e execute
 $docker-compose exec web python manage.py migrate --database=varejo
