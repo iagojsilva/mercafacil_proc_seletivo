@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +24,7 @@ SECRET_KEY = 'django-insecure-)d*gcvi8471q63^rb!rn$16h45u5#=t!k#cf7+te*e@-$7fr&o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.37']
 
 
 # Application definition
@@ -37,6 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'contatos_varejo',
+    'contatos_macapa'
 ]
 
 MIDDLEWARE = [
@@ -75,12 +77,12 @@ WSGI_APPLICATION = 'mercafacil.wsgi.application'
 
 DATABASES = {
     'default':{},
-    'varejao': {
+    'varejo': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'admin',
         'USER': 'admin',
         'PASSWORD': 'admin',
-        'HOST': 'postgresql',
+        'HOST': '172.20.0.3',
         'PORT': 5432,
     },
     'macapa': {
@@ -88,7 +90,7 @@ DATABASES = {
         'NAME': 'admin',
         'USER': 'admin',
         'PASSWORD': 'admin',
-        'HOST': 'mysql',
+        'HOST': '172.20.0.2',
         'PORT': 3306,
     }
 }
@@ -137,4 +139,4 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DATABASES_ROUTERS = ['routers.db_routers.AuthRouter']
+DATABASE_ROUTERS = ['routers.db_routers.AuthRouter', 'routers.db_routers.Varejo','routers.db_routers.Macapa']
